@@ -1,0 +1,570 @@
+{
+ "restaurant": {
+  "category": "activity",
+  "ar": "مطاعم وكافيهات"
+ },
+ "retail": {
+  "category": "activity",
+  "ar": "محلات تجارية"
+ },
+ "clinic": {
+  "category": "activity",
+  "ar": "عيادات"
+ },
+ "company": {
+  "category": "activity",
+  "ar": "شركات"
+ },
+ "services": {
+  "category": "activity",
+  "ar": "خدمات وأعمال مهنية"
+ },
+ "other": {
+  "category": "activity",
+  "ar": "نشاط آخر"
+ },
+ "dashboard": {
+  "category": "module",
+  "ar": "لوحة التحكم"
+ },
+ "sales": {
+  "category": "module",
+  "ar": "المبيعات"
+ },
+ "purchases": {
+  "category": "module",
+  "ar": "المشتريات"
+ },
+ "inventory": {
+  "category": "module",
+  "ar": "المخزون"
+ },
+ "accounting": {
+  "category": "module",
+  "ar": "المحاسبة"
+ },
+ "customers": {
+  "category": "module",
+  "ar": "العملاء"
+ },
+ "suppliers": {
+  "category": "module",
+  "ar": "الموردين"
+ },
+ "hr": {
+  "category": "module",
+  "ar": "الموارد البشرية"
+ },
+ "payroll": {
+  "category": "module",
+  "ar": "الرواتب"
+ },
+ "reports": {
+  "category": "module",
+  "ar": "التقارير"
+ },
+ "pos": {
+  "category": "module",
+  "ar": "نقطة البيع"
+ },
+ "orders": {
+  "category": "module",
+  "ar": "الطلبات"
+ },
+ "tables": {
+  "category": "module",
+  "ar": "الطاولات"
+ },
+ "menu": {
+  "category": "module",
+  "ar": "المنيو والوصفات"
+ },
+ "kitchen": {
+  "category": "module",
+  "ar": "المطبخ"
+ },
+ "appointments": {
+  "category": "module",
+  "ar": "المواعيد"
+ },
+ "patients": {
+  "category": "module",
+  "ar": "المرضى"
+ },
+ "prescriptions": {
+  "category": "module",
+  "ar": "الوصفات"
+ },
+ "projects": {
+  "category": "module",
+  "ar": "المشاريع"
+ },
+ "tasks": {
+  "category": "module",
+  "ar": "المهام"
+ },
+ "invoices": {
+  "category": "module",
+  "ar": "الفواتير"
+ },
+ "payments": {
+  "category": "module",
+  "ar": "المدفوعات"
+ },
+ "expenses": {
+  "category": "module",
+  "ar": "المصروفات"
+ },
+ "delivery": {
+  "category": "module",
+  "ar": "التوصيل"
+ },
+ "warehouse": {
+  "category": "module",
+  "ar": "المستودعات"
+ },
+ "branches": {
+  "category": "module",
+  "ar": "الفروع"
+ },
+ "settings": {
+  "category": "system",
+  "ar": "الإعدادات"
+ },
+ "roles": {
+  "category": "system",
+  "ar": "الأدوار والصلاحيات"
+ },
+ "notifications": {
+  "category": "system",
+  "ar": "التنبيهات"
+ },
+ "integrations": {
+  "category": "system",
+  "ar": "التكاملات"
+ },
+ "search": {
+  "category": "system",
+  "ar": "بحث"
+ },
+ "language": {
+  "category": "system",
+  "ar": "اللغة"
+ },
+ "theme": {
+  "category": "system",
+  "ar": "المظهر"
+ },
+ "backup": {
+  "category": "system",
+  "ar": "النسخ الاحتياطي"
+ },
+ "invite": {
+  "category": "system",
+  "ar": "دعوة فريق"
+ },
+ "mail": {
+  "category": "system",
+  "ar": "البريد"
+ },
+ "password": {
+  "category": "system",
+  "ar": "كلمة المرور"
+ },
+ "otp": {
+  "category": "system",
+  "ar": "رمز التحقق"
+ },
+ "success": {
+  "category": "status",
+  "ar": "نجاح"
+ },
+ "warning": {
+  "category": "status",
+  "ar": "تنبيه"
+ },
+ "error": {
+  "category": "status",
+  "ar": "خطأ"
+ },
+ "coffee": {
+  "category": "restaurant",
+  "ar": "قهوة"
+ },
+ "service-bell": {
+  "category": "restaurant",
+  "ar": "جرس الخدمة"
+ },
+ "chef-hat": {
+  "category": "restaurant",
+  "ar": "الشيف"
+ },
+ "takeaway-bag": {
+  "category": "restaurant",
+  "ar": "طلبات خارجية"
+ },
+ "drink": {
+  "category": "restaurant",
+  "ar": "مشروبات"
+ },
+ "kitchen-display": {
+  "category": "restaurant",
+  "ar": "شاشة المطبخ"
+ },
+ "dine-in": {
+  "category": "restaurant",
+  "ar": "طلب داخلي"
+ },
+ "delivery-bike": {
+  "category": "restaurant",
+  "ar": "توصيل بالدراجة"
+ },
+ "ingredients": {
+  "category": "restaurant",
+  "ar": "المكونات"
+ },
+ "barcode": {
+  "category": "retail",
+  "ar": "باركود"
+ },
+ "price-tag": {
+  "category": "retail",
+  "ar": "سعر / ملصق"
+ },
+ "shopping-bag": {
+  "category": "retail",
+  "ar": "كيس تسوق"
+ },
+ "discount": {
+  "category": "retail",
+  "ar": "خصم"
+ },
+ "gift-card": {
+  "category": "retail",
+  "ar": "بطاقة هدية"
+ },
+ "returns": {
+  "category": "retail",
+  "ar": "مرتجعات"
+ },
+ "shelf": {
+  "category": "retail",
+  "ar": "رفوف"
+ },
+ "scale": {
+  "category": "retail",
+  "ar": "ميزان"
+ },
+ "loyalty": {
+  "category": "retail",
+  "ar": "نقاط الولاء"
+ },
+ "categories": {
+  "category": "retail",
+  "ar": "التصنيفات"
+ },
+ "stocktake": {
+  "category": "retail",
+  "ar": "جرد"
+ },
+ "transfer": {
+  "category": "retail",
+  "ar": "تحويل مخزون"
+ },
+ "cash-drawer": {
+  "category": "retail",
+  "ar": "درج النقدية"
+ },
+ "stethoscope": {
+  "category": "clinic",
+  "ar": "سماعة طبية"
+ },
+ "tooth": {
+  "category": "clinic",
+  "ar": "أسنان"
+ },
+ "medical-record": {
+  "category": "clinic",
+  "ar": "ملف طبي"
+ },
+ "lab": {
+  "category": "clinic",
+  "ar": "معمل / تحاليل"
+ },
+ "syringe": {
+  "category": "clinic",
+  "ar": "حقن"
+ },
+ "insurance": {
+  "category": "clinic",
+  "ar": "تأمين طبي"
+ },
+ "queue-ticket": {
+  "category": "clinic",
+  "ar": "دور الانتظار"
+ },
+ "pharmacy": {
+  "category": "clinic",
+  "ar": "صيدلية"
+ },
+ "vitals": {
+  "category": "clinic",
+  "ar": "علامات حيوية"
+ },
+ "doctor": {
+  "category": "clinic",
+  "ar": "طبيب"
+ },
+ "contract": {
+  "category": "company",
+  "ar": "عقود"
+ },
+ "org-chart": {
+  "category": "company",
+  "ar": "الهيكل التنظيمي"
+ },
+ "target": {
+  "category": "company",
+  "ar": "الأهداف"
+ },
+ "funnel": {
+  "category": "company",
+  "ar": "العملاء المحتملين"
+ },
+ "bank": {
+  "category": "company",
+  "ar": "البنك"
+ },
+ "tax": {
+  "category": "company",
+  "ar": "الضرائب"
+ },
+ "budget": {
+  "category": "company",
+  "ar": "الميزانية"
+ },
+ "assets": {
+  "category": "company",
+  "ar": "الأصول"
+ },
+ "meeting": {
+  "category": "company",
+  "ar": "اجتماعات"
+ },
+ "timer": {
+  "category": "services",
+  "ar": "المؤقت"
+ },
+ "timesheet": {
+  "category": "services",
+  "ar": "سجل الساعات"
+ },
+ "support": {
+  "category": "services",
+  "ar": "الدعم الفني"
+ },
+ "subscription": {
+  "category": "services",
+  "ar": "اشتراكات"
+ },
+ "proposal": {
+  "category": "services",
+  "ar": "عرض تقديمي"
+ },
+ "home": {
+  "category": "common",
+  "ar": "الرئيسية"
+ },
+ "employees": {
+  "category": "common",
+  "ar": "الموظفين"
+ },
+ "attendance": {
+  "category": "common",
+  "ar": "الحضور"
+ },
+ "shifts": {
+  "category": "common",
+  "ar": "الورديات"
+ },
+ "leave": {
+  "category": "common",
+  "ar": "الإجازات"
+ },
+ "document": {
+  "category": "common",
+  "ar": "مستند"
+ },
+ "upload": {
+  "category": "common",
+  "ar": "رفع"
+ },
+ "download": {
+  "category": "common",
+  "ar": "تنزيل"
+ },
+ "print": {
+  "category": "common",
+  "ar": "طباعة"
+ },
+ "export": {
+  "category": "common",
+  "ar": "تصدير"
+ },
+ "filter": {
+  "category": "common",
+  "ar": "تصفية"
+ },
+ "sort": {
+  "category": "common",
+  "ar": "ترتيب"
+ },
+ "edit": {
+  "category": "common",
+  "ar": "تعديل"
+ },
+ "trash": {
+  "category": "common",
+  "ar": "حذف"
+ },
+ "add": {
+  "category": "common",
+  "ar": "إضافة"
+ },
+ "more": {
+  "category": "common",
+  "ar": "المزيد"
+ },
+ "eye": {
+  "category": "common",
+  "ar": "إظهار"
+ },
+ "eye-off": {
+  "category": "common",
+  "ar": "إخفاء"
+ },
+ "copy": {
+  "category": "common",
+  "ar": "نسخ"
+ },
+ "share": {
+  "category": "common",
+  "ar": "مشاركة"
+ },
+ "star": {
+  "category": "common",
+  "ar": "مفضلة"
+ },
+ "bookmark": {
+  "category": "common",
+  "ar": "حفظ"
+ },
+ "hamburger": {
+  "category": "common",
+  "ar": "القائمة"
+ },
+ "close": {
+  "category": "common",
+  "ar": "إغلاق"
+ },
+ "arrow-right": {
+  "category": "common",
+  "ar": "يمين"
+ },
+ "arrow-left": {
+  "category": "common",
+  "ar": "يسار"
+ },
+ "chevron-down": {
+  "category": "common",
+  "ar": "لأسفل"
+ },
+ "chevron-up": {
+  "category": "common",
+  "ar": "لأعلى"
+ },
+ "refresh": {
+  "category": "common",
+  "ar": "تحديث"
+ },
+ "calendar": {
+  "category": "common",
+  "ar": "التقويم"
+ },
+ "clock": {
+  "category": "common",
+  "ar": "الوقت"
+ },
+ "map": {
+  "category": "common",
+  "ar": "الخريطة"
+ },
+ "phone": {
+  "category": "common",
+  "ar": "الهاتف"
+ },
+ "chat": {
+  "category": "common",
+  "ar": "المحادثات"
+ },
+ "camera": {
+  "category": "common",
+  "ar": "الكاميرا"
+ },
+ "image": {
+  "category": "common",
+  "ar": "صورة"
+ },
+ "currency": {
+  "category": "common",
+  "ar": "العملة"
+ },
+ "percent": {
+  "category": "common",
+  "ar": "نسبة"
+ },
+ "help": {
+  "category": "common",
+  "ar": "مساعدة"
+ },
+ "info": {
+  "category": "common",
+  "ar": "معلومات"
+ },
+ "logout": {
+  "category": "common",
+  "ar": "تسجيل الخروج"
+ },
+ "profile": {
+  "category": "common",
+  "ar": "الملف الشخصي"
+ },
+ "audit-log": {
+  "category": "common",
+  "ar": "سجل العمليات"
+ },
+ "api": {
+  "category": "common",
+  "ar": "واجهة برمجية"
+ },
+ "database": {
+  "category": "common",
+  "ar": "قاعدة بيانات"
+ },
+ "offline": {
+  "category": "common",
+  "ar": "بدون إنترنت"
+ },
+ "security": {
+  "category": "common",
+  "ar": "الأمان"
+ },
+ "key": {
+  "category": "common",
+  "ar": "مفتاح"
+ },
+ "qr-code": {
+  "category": "common",
+  "ar": "رمز QR"
+ }
+}

@@ -1,0 +1,81 @@
+const Map<String, String> en = {
+  // ── App ──────────────────────────────────────────────────
+  'app_name': 'Blinker ERP',
+
+  // ── Auth – General ───────────────────────────────────────
+  'auth_welcome_back': 'Welcome Back',
+  'auth_sign_in_to_continue': 'Sign in to continue',
+  'auth_email': 'Email',
+  'auth_email_hint': 'example@company.com',
+  'auth_password': 'Password',
+  'auth_password_hint': '••••••••',
+  'auth_remember_me': 'Remember me',
+  'auth_forgot_password': 'Forgot password?',
+  'auth_login': 'Login',
+  'auth_logout': 'Logout',
+  'auth_no_account': "Don't have an account?",
+  'auth_contact_admin': 'Contact Administrator',
+  'auth_or': 'or',
+
+  // ── Auth – Validation ────────────────────────────────────
+  'auth_email_required': 'Email is required',
+  'auth_email_invalid': 'Invalid email address',
+  'auth_password_required': 'Password is required',
+  'auth_password_min': 'Password must be at least 6 characters',
+  'auth_invalid_credentials': 'Invalid email or password',
+  'auth_account_disabled': 'Account is disabled, contact administrator',
+
+  // ── Splash ───────────────────────────────────────────────
+  'splash_loading': 'Loading…',
+
+  // ── Onboarding ───────────────────────────────────────────
+  'onboarding_skip': 'Skip',
+  'onboarding_next': 'Next',
+  'onboarding_get_started': 'Get Started',
+  'onboarding_title_1': 'All-in-One Management',
+  'onboarding_body_1': 'Full control over your business operations from one place',
+  'onboarding_title_2': 'Real-Time Reports',
+  'onboarding_body_2': 'Get instant and accurate statistics and reports',
+  'onboarding_title_3': 'Multi-Branch',
+  'onboarding_body_3': 'Manage all your branches easily and efficiently',
+
+  // ── Common ───────────────────────────────────────────────
+  'common_save': 'Save',
+  'common_cancel': 'Cancel',
+  'common_confirm': 'Confirm',
+  'common_delete': 'Delete',
+  'common_edit': 'Edit',
+  'common_add': 'Add',
+  'common_search': 'Search',
+  'common_filter': 'Filter',
+  'common_refresh': 'Refresh',
+  'common_loading': 'Loading…',
+  'common_error': 'An error occurred',
+  'common_retry': 'Retry',
+  'common_no_data': 'No data available',
+  'common_success': 'Success',
+  'common_yes': 'Yes',
+  'common_no': 'No',
+  'common_ok': 'OK',
+  'common_back': 'Back',
+  'common_close': 'Close',
+  'common_select': 'Select',
+  'common_date': 'Date',
+  'common_time': 'Time',
+  'common_status': 'Status',
+  'common_notes': 'Notes',
+  'common_total': 'Total',
+  'common_settings': 'Settings',
+  'common_profile': 'Profile',
+  'common_notifications': 'Notifications',
+  'common_language': 'Language',
+  'common_dark_mode': 'Dark Mode',
+  'common_light_mode': 'Light Mode',
+
+  // ── Errors ───────────────────────────────────────────────
+  'error_network': 'No internet connection',
+  'error_server': 'Server error, please try again later',
+  'error_unknown': 'An unexpected error occurred',
+  'error_timeout': 'Connection timed out',
+  'error_unauthorized': 'You are not authorized to perform this action',
+};

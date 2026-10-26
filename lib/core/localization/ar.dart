@@ -1,0 +1,81 @@
+const Map<String, String> ar = {
+  // ── App ──────────────────────────────────────────────────
+  'app_name': 'بلينكر ERP',
+
+  // ── Auth – General ───────────────────────────────────────
+  'auth_welcome_back': 'مرحباً بعودتك',
+  'auth_sign_in_to_continue': 'سجّل دخولك للمتابعة',
+  'auth_email': 'البريد الإلكتروني',
+  'auth_email_hint': 'example@company.com',
+  'auth_password': 'كلمة المرور',
+  'auth_password_hint': '••••••••',
+  'auth_remember_me': 'تذكّرني',
+  'auth_forgot_password': 'نسيت كلمة المرور؟',
+  'auth_login': 'تسجيل الدخول',
+  'auth_logout': 'تسجيل الخروج',
+  'auth_no_account': 'ليس لديك حساب؟',
+  'auth_contact_admin': 'تواصل مع المسؤول',
+  'auth_or': 'أو',
+
+  // ── Auth – Validation ────────────────────────────────────
+  'auth_email_required': 'البريد الإلكتروني مطلوب',
+  'auth_email_invalid': 'البريد الإلكتروني غير صحيح',
+  'auth_password_required': 'كلمة المرور مطلوبة',
+  'auth_password_min': 'كلمة المرور يجب أن تكون 6 أحرف على الأقل',
+  'auth_invalid_credentials': 'بيانات الدخول غير صحيحة',
+  'auth_account_disabled': 'الحساب معطّل، تواصل مع المسؤول',
+
+  // ── Splash ───────────────────────────────────────────────
+  'splash_loading': 'جاري التحميل…',
+
+  // ── Onboarding ───────────────────────────────────────────
+  'onboarding_skip': 'تخطّي',
+  'onboarding_next': 'التالي',
+  'onboarding_get_started': 'ابدأ الآن',
+  'onboarding_title_1': 'إدارة شاملة',
+  'onboarding_body_1': 'تحكّم كامل في عمليات شركتك من مكان واحد',
+  'onboarding_title_2': 'تقارير فورية',
+  'onboarding_body_2': 'احصل على تقارير وإحصائيات لحظية دقيقة',
+  'onboarding_title_3': 'متعدد الفروع',
+  'onboarding_body_3': 'أدر جميع فروعك بكل سهولة ويسر',
+
+  // ── Common ───────────────────────────────────────────────
+  'common_save': 'حفظ',
+  'common_cancel': 'إلغاء',
+  'common_confirm': 'تأكيد',
+  'common_delete': 'حذف',
+  'common_edit': 'تعديل',
+  'common_add': 'إضافة',
+  'common_search': 'بحث',
+  'common_filter': 'فلترة',
+  'common_refresh': 'تحديث',
+  'common_loading': 'جاري التحميل…',
+  'common_error': 'حدث خطأ',
+  'common_retry': 'إعادة المحاولة',
+  'common_no_data': 'لا توجد بيانات',
+  'common_success': 'تمّ بنجاح',
+  'common_yes': 'نعم',
+  'common_no': 'لا',
+  'common_ok': 'حسناً',
+  'common_back': 'رجوع',
+  'common_close': 'إغلاق',
+  'common_select': 'اختر',
+  'common_date': 'التاريخ',
+  'common_time': 'الوقت',
+  'common_status': 'الحالة',
+  'common_notes': 'ملاحظات',
+  'common_total': 'الإجمالي',
+  'common_settings': 'الإعدادات',
+  'common_profile': 'الملف الشخصي',
+  'common_notifications': 'الإشعارات',
+  'common_language': 'اللغة',
+  'common_dark_mode': 'الوضع الداكن',
+  'common_light_mode': 'الوضع الفاتح',
+
+  // ── Errors ───────────────────────────────────────────────
+  'error_network': 'لا يوجد اتصال بالإنترنت',
+  'error_server': 'خطأ في الخادم، يرجى المحاولة لاحقاً',
+  'error_unknown': 'حدث خطأ غير متوقع',
+  'error_timeout': 'انتهت مهلة الاتصال',
+  'error_unauthorized': 'غير مصرّح لك بهذه العملية',
+};
