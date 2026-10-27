@@ -1,6 +1,7 @@
 const Map<String, String> en = {
+  'auth_preview_only': 'This is a UI preview. Sign-in will be available after authentication is connected.',
   // ── App ──────────────────────────────────────────────────
-  'app_name': 'Blinker ERP',
+  'app_name': 'Blink ERP',
 
   // ── Auth – General ───────────────────────────────────────
   'auth_welcome_back': 'Welcome Back',

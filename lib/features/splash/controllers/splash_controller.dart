@@ -9,19 +9,10 @@ class SplashController extends GetxController {
     super.onReady();
     _navigate();
   }
-
   Future<void> _navigate() async {
-    await Future.delayed(
-        const Duration(milliseconds: AppConstants.splashDurationMs));
-
+    await Future.delayed(const Duration(milliseconds: AppConstants.splashDurationMs));
+    if (isClosed) return;
     final storage = Get.find<LocalStorage>();
-
-    if (storage.isFirstLaunch) {
-      Get.offAllNamed(AppRoutes.onboarding);
-    } else if (storage.isLoggedIn) {
-      Get.offAllNamed(AppRoutes.dashboard);
-    } else {
-      Get.offAllNamed(AppRoutes.login);
-    }
+    Get.offAllNamed(storage.isFirstLaunch ? AppRoutes.onboarding : AppRoutes.login);
   }
 }

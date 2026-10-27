@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import '../../../core/constants/app_assets.dart';
 import '../../../core/theme/app_colors.dart';
+import '../../../core/widgets/language_switch.dart';
 import '../controllers/onboarding_controller.dart';
 
 class OnboardingView extends GetView<OnboardingController> {
@@ -13,12 +14,18 @@ class OnboardingView extends GetView<OnboardingController> {
     return Scaffold(
       backgroundColor: AppColors.background,
       body: SafeArea(
-        child: Column(
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 600),
+            child: LayoutBuilder(builder: (context, constraints) => SingleChildScrollView(
+              child: SizedBox(
+                height: constraints.maxHeight < 650 ? 650 : constraints.maxHeight,
+                child: Column(
           children: [
             // ── Skip button ───────────────────────────────────
-            Align(
-              alignment: AlignmentDirectional.topEnd,
-              child: Padding(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [const Padding(padding: EdgeInsetsDirectional.only(start: 16), child: LanguageSwitch()), Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                 child: TextButton(
@@ -29,7 +36,7 @@ class OnboardingView extends GetView<OnboardingController> {
                         const TextStyle(color: AppColors.textSecondary),
                   ),
                 ),
-              ),
+              )],
             ),
 
             // ── Hero image ────────────────────────────────────
@@ -107,6 +114,10 @@ class OnboardingView extends GetView<OnboardingController> {
 
             const SizedBox(height: 40),
           ],
+                ),
+              ),
+            )),
+          ),
         ),
       ),
     );

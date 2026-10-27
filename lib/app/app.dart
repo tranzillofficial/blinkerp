@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -19,11 +20,13 @@ class App extends StatelessWidget {
     final lang = box.read<String>('app_language') ?? 'ar';
 
     return GetMaterialApp(
-      title: 'Blinker ERP',
+      title: 'Blink ERP',
       debugShowCheckedModeBanner: false,
 
       // ── Localization ──────────────────────────────────────
       translations: AppTranslations(),
+      supportedLocales: const [Locale('en'), Locale('ar')],
+      localizationsDelegates: const [GlobalMaterialLocalizations.delegate, GlobalWidgetsLocalizations.delegate, GlobalCupertinoLocalizations.delegate],
       locale: Locale(lang),
       fallbackLocale: const Locale('en'),
 

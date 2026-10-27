@@ -17,5 +17,6 @@ class AppAssets {
   static const String iconsJson = 'assets/icons/icons.json';
 
   // ── Animated ──────────────────────────────────────────────
-  // Add Lottie / Rive paths here when files land in assets/animated/
+  static const String splashVideo = 'assets/animations/blink-logo-transparent.webm';
+  static const String loadingVideo = 'assets/animations/loading.webm';
 }
