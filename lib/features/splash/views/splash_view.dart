@@ -7,8 +7,11 @@ import '../controllers/splash_controller.dart';
 class SplashView extends GetView<SplashController> {
   const SplashView({super.key});
   @override
-  Widget build(BuildContext context) => const Scaffold(
+  Widget build(BuildContext context) {
+    Get.find<SplashController>();
+    return const Scaffold(
         backgroundColor: Colors.white,
         body: Center(child: BrandVideo(asset: AppAssets.splashVideo, size: 300)),
       );
+  }
 }
