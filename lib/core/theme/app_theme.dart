@@ -9,11 +9,12 @@ class AppTheme {
   static ThemeData get dark => ThemeData(
         brightness: Brightness.dark,
         fontFamily: AppTypography.fontFamily,
+        fontFamilyFallback: const ['NotoSansArabic'],
         scaffoldBackgroundColor: AppColors.background,
         colorScheme: const ColorScheme.dark(
           primary: AppColors.accent,
           surface: AppColors.surface,
         ),
-        textTheme: AppTypography.textTheme,
+        textTheme: AppTypography.textTheme.apply(fontFamilyFallback: const ['NotoSansArabic']),
       );
 }
