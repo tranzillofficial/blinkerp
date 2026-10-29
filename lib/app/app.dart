@@ -26,12 +26,18 @@ class App extends StatelessWidget {
       // ── Localization ──────────────────────────────────────
       translations: AppTranslations(),
       supportedLocales: const [Locale('en'), Locale('ar')],
-      localizationsDelegates: const [GlobalMaterialLocalizations.delegate, GlobalWidgetsLocalizations.delegate, GlobalCupertinoLocalizations.delegate],
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
       locale: Locale(lang),
       fallbackLocale: const Locale('en'),
 
       // ── Theme ─────────────────────────────────────────────
-      theme: AppTheme.dark,
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
+      themeMode: ThemeMode.light,
 
       // ── DI ────────────────────────────────────────────────
       initialBinding: InitialBinding(),

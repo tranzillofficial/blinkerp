@@ -1,5 +1,6 @@
 const Map<String, String> en = {
-  'auth_preview_only': 'This is a UI preview. Sign-in will be available after authentication is connected.',
+  'auth_preview_only':
+      'This is a UI preview. Sign-in will be available after authentication is connected.',
   // ── App ──────────────────────────────────────────────────
   'app_name': 'Blink ERP',
 
@@ -11,7 +12,7 @@ const Map<String, String> en = {
   'auth_password': 'Password',
   'auth_password_hint': '••••••••',
   'auth_remember_me': 'Remember me',
-  'auth_forgot_password': 'Forgot password?',
+  'auth_forgot_password': 'Forgot password ?',
   'auth_login': 'Login',
   'auth_logout': 'Logout',
   'auth_no_account': "Don't have an account?",
@@ -32,13 +33,74 @@ const Map<String, String> en = {
   // ── Onboarding ───────────────────────────────────────────
   'onboarding_skip': 'Skip',
   'onboarding_next': 'Next',
+  'onboarding_back': 'Back',
+  'onboarding_continue': 'Continue',
+  'onboarding_step_format': 'STEP @current OF @total',
   'onboarding_get_started': 'Get Started',
-  'onboarding_title_1': 'All-in-One Management',
-  'onboarding_body_1': 'Full control over your business operations from one place',
-  'onboarding_title_2': 'Real-Time Reports',
-  'onboarding_body_2': 'Get instant and accurate statistics and reports',
-  'onboarding_title_3': 'Multi-Branch',
-  'onboarding_body_3': 'Manage all your branches easily and efficiently',
+  'onboarding_launch_app': 'Launch Blink ERP',
+
+  // Step 1 - Business Activity
+  'onboarding_step1_title': 'What type of business do you run?',
+  'onboarding_step1_subtitle':
+      'Choose the activity that best describes your business.\nThis helps us set up the right tools for you.',
+  'act_restaurant': 'Restaurant & Cafe',
+  'act_restaurant_desc': 'Menu, orders, tables, POS and inventory.',
+  'act_pharmacy': 'Pharmacy & Medicines',
+  'act_pharmacy_desc': 'Barcode, batches, expiry and stock.',
+  'act_clinic': 'Clinic',
+  'act_clinic_desc': 'Appointments, patient files, services and billing.',
+  'act_supermarket': 'Supermarket',
+  'act_supermarket_desc': 'Fast sales, barcode, stock and cashier.',
+  'act_wholesale': 'Wholesale Store',
+  'act_wholesale_desc':
+      'Wholesale pricing, price tiers, customers and receivables.',
+  'act_retail': 'Retail Store',
+  'act_retail_desc': 'Sales, products, returns and branches.',
+  'act_services': 'Service Company',
+  'act_services_desc': 'Clients, projects, tasks and invoices.',
+  'act_other': 'Other Activity',
+  'act_other_desc':
+      "We'll ask you a few questions to understand your business details.",
+
+  // Step 2 - Business Details
+  'onboarding_step2_title': 'Company Information',
+  'onboarding_step2_subtitle':
+      'Tell us a bit about your business to personalize your invoices and reports.',
+  'onboarding_company_name': 'Company / Store Name',
+  'onboarding_company_name_hint': 'e.g. Al Noor Trading Co.',
+  'onboarding_country': 'Country',
+  'onboarding_currency': 'Primary Currency',
+  'onboarding_branches_count': 'Number of Branches',
+
+  // Step 3 - Modules
+  'onboarding_step3_title': 'Select Your Modules',
+  'onboarding_step3_subtitle':
+      'We pre-selected recommended tools for your business. You can customize them anytime.',
+  'mod_pos': 'Point of Sale (POS)',
+  'mod_pos_desc': 'Fast checkout, cash drawers, barcode scanners',
+  'mod_inventory': 'Inventory & Stock',
+  'mod_inventory_desc': 'Multi-warehouse, stocktake, transfer & alerts',
+  'mod_invoices': 'Invoicing & Sales',
+  'mod_invoices_desc': 'Tax invoices, quotations, credit notes',
+  'mod_accounting': 'Accounting & Finance',
+  'mod_accounting_desc': 'Chart of accounts, journal entries, ledger',
+  'mod_hr': 'HR & Payroll',
+  'mod_hr_desc': 'Attendance, shifts, payroll and leaves',
+  'mod_kitchen': 'Kitchen Display & Tables',
+  'mod_kitchen_desc': 'Live order sync, table mapping, courses',
+  'mod_customers': 'CRM & Loyalty',
+  'mod_customers_desc': 'Customer accounts, loyalty points, statements',
+  'mod_reports': 'Analytics & Reports',
+  'mod_reports_desc': 'Real-time profit, sales trends, tax reports',
+
+  // Step 4 - Ready
+  'onboarding_step4_title': 'Everything is Ready!',
+  'onboarding_step4_subtitle':
+      'Your Blink ERP workspace has been customized and configured for your business.',
+  'onboarding_summary_activity': 'Business Activity',
+  'onboarding_summary_company': 'Company Name',
+  'onboarding_summary_currency': 'Currency',
+  'onboarding_summary_modules': 'Active Modules',
 
   // ── Common ───────────────────────────────────────────────
   'common_save': 'Save',
@@ -50,7 +112,7 @@ const Map<String, String> en = {
   'common_search': 'Search',
   'common_filter': 'Filter',
   'common_refresh': 'Refresh',
-  'common_loading': 'Loading…',
+  'common_loading': 'Loading',
   'common_error': 'An error occurred',
   'common_retry': 'Retry',
   'common_no_data': 'No data available',

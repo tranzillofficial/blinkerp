@@ -1,54 +1,38 @@
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
 
-/// Typography tokens.
 class AppTypography {
   AppTypography._();
 
   static const String fontFamily = 'Manrope';
 
-  static const TextTheme textTheme = TextTheme(
-    displayLarge: TextStyle(
-      fontFamily: fontFamily,
-      fontSize: 32,
-      fontWeight: FontWeight.w700,
-      color: AppColors.textPrimary,
-    ),
-    headlineMedium: TextStyle(
-      fontFamily: fontFamily,
-      fontSize: 26,
-      fontWeight: FontWeight.w700,
-      color: AppColors.textPrimary,
-    ),
-    titleLarge: TextStyle(
-      fontFamily: fontFamily,
-      fontSize: 20,
-      fontWeight: FontWeight.w600,
-      color: AppColors.textPrimary,
-    ),
-    bodyLarge: TextStyle(
-      fontFamily: fontFamily,
-      fontSize: 16,
-      fontWeight: FontWeight.w400,
-      color: AppColors.textPrimary,
-    ),
-    bodyMedium: TextStyle(
-      fontFamily: fontFamily,
-      fontSize: 14,
-      fontWeight: FontWeight.w400,
-      color: AppColors.textSecondary,
-    ),
-    bodySmall: TextStyle(
-      fontFamily: fontFamily,
-      fontSize: 13,
-      fontWeight: FontWeight.w400,
-      color: AppColors.textSecondary,
-    ),
-    labelLarge: TextStyle(
-      fontFamily: fontFamily,
-      fontSize: 16,
-      fontWeight: FontWeight.w600,
-      color: AppColors.textPrimary,
-    ),
-  );
+  static TextTheme get textTheme => lightTextTheme;
+
+  static TextTheme get lightTextTheme =>
+      _buildTextTheme(AppColors.lightTextPrimary, AppColors.lightTextSecondary);
+
+  static TextTheme get darkTextTheme =>
+      _buildTextTheme(AppColors.darkTextPrimary, AppColors.darkTextSecondary);
+
+  static TextTheme _buildTextTheme(Color primary, Color secondary) {
+    TextStyle style(double size, FontWeight weight, Color color) {
+      return TextStyle(
+        fontFamily: fontFamily,
+        fontFamilyFallback: const ['NotoSansArabic'],
+        fontSize: size,
+        fontWeight: weight,
+        color: color,
+      );
+    }
+
+    return TextTheme(
+      displayLarge: style(32, FontWeight.w700, primary),
+      headlineMedium: style(26, FontWeight.w700, primary),
+      titleLarge: style(20, FontWeight.w600, primary),
+      bodyLarge: style(16, FontWeight.w400, primary),
+      bodyMedium: style(14, FontWeight.w400, secondary),
+      bodySmall: style(13, FontWeight.w400, secondary),
+      labelLarge: style(16, FontWeight.w600, primary),
+    );
+  }
 }

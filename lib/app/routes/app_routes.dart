@@ -5,7 +5,13 @@ class AppRoutes {
 
   static const String splash = '/splash';
   static const String onboarding = '/onboarding';
+
+  // Auth Routes
   static const String login = '/login';
+  static const String register = '/register';
+  static const String forgotPassword = '/forgotPassword';
+  static const String otpVerification = '/otpVerification';
+  static const String support = '/support';
 
   // ── Stubs for future ERP modules ──────────────────────
   static const String dashboard = '/dashboard';

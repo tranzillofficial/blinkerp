@@ -10,13 +10,16 @@ class AppAssets {
   static const String lightNameLogo = 'assets/images/light_name_logo.svg';
   static const String whiteLogo = 'assets/images/white_logo.svg';
   static const String whiteNameLogo = 'assets/images/white_name_logo.svg';
-  static const String onboardingHero = 'assets/images/onboarding_hero.svg';
+  static const String onboardingHero = 'assets/images/onboarding_hero.png';
+  static const String loginHero     = 'assets/images/hero.svg';
 
   // ── Icons ─────────────────────────────────────────────────
   static const String blinkSprite = 'assets/icons/blink-sprite.svg';
   static const String iconsJson = 'assets/icons/icons.json';
+  static const String language = 'assets/icons/system/language.svg';
 
   // ── Animated ──────────────────────────────────────────────
-  static const String splashVideo = 'assets/animations/blink-logo-transparent.webm';
+  static const String splashVideo =
+      'assets/animations/blink-logo-transparent.webm';
   static const String loadingVideo = 'assets/animations/loading.webm';
 }

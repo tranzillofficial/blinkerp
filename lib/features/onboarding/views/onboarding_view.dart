@@ -1,183 +1,271 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import '../../../core/constants/app_assets.dart';
-import '../../../core/theme/app_colors.dart';
-import '../../../core/widgets/language_switch.dart';
-import '../controllers/onboarding_controller.dart';
 
-class OnboardingView extends GetView<OnboardingController> {
+import '../../../core/constants/app_assets.dart';
+import '../../../core/widgets/custom_text.dart';
+import '../../../core/widgets/window_title_bar.dart';
+import '../controllers/onboarding_controller.dart';
+import '../widgets/onboarding_language_button.dart';
+import '../widgets/onboarding_progress_bar.dart';
+import 'steps/step1_activity_view.dart';
+import 'steps/step2_company_view.dart';
+import 'steps/step3_modules_view.dart';
+import 'steps/step4_ready_view.dart';
+
+class OnboardingView extends StatelessWidget {
   const OnboardingView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(OnboardingController());
+    final titleBarController = Get.put(CustomTitleBarController());
+
     return Scaffold(
-      backgroundColor: AppColors.background,
-      body: SafeArea(
-        child: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 600),
-            child: LayoutBuilder(builder: (context, constraints) => SingleChildScrollView(
-              child: SizedBox(
-                height: constraints.maxHeight < 650 ? 650 : constraints.maxHeight,
-                child: Column(
+      backgroundColor: Colors.white,
+      body: Obx(() {
+        final isWindowed = titleBarController.isWindowed;
+
+        return Stack(
           children: [
-            // ── Skip button ───────────────────────────────────
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [const Padding(padding: EdgeInsetsDirectional.only(start: 16), child: LanguageSwitch()), Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-                child: TextButton(
-                  onPressed: controller.skip,
-                  child: Text(
-                    'onboarding_skip'.tr,
-                    style:
-                        const TextStyle(color: AppColors.textSecondary),
-                  ),
-                ),
-              )],
-            ),
+            // ── Background Ambient Decorative Blobs ───────────────────
+            const _AmbientBackgroundDecoration(),
 
-            // ── Hero image ────────────────────────────────────
-            Expanded(
-              flex: 5,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 32),
-                child: SvgPicture.asset(
-                  AppAssets.onboardingHero,
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ),
+            // ── Main Content Area ─────────────────────────────────────
+            Positioned.fill(
+              top: isWindowed ? 34 : 0,
+              child: Row(
+                children: [
+                  // ── Left Column: Form & Wizard Content (flex 62) ────
+                  Expanded(
+                    flex: 62,
+                    child: SafeArea(
+                      child: Center(
+                        child: SingleChildScrollView(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 48,
+                            vertical: 32,
+                          ),
+                          child: ConstrainedBox(
+                            constraints: const BoxConstraints(maxWidth: 820),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                // ── Top Bar: Logo & Language Switch ───
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    SvgPicture.asset(
+                                      AppAssets.colorNameLogo,
+                                      height: 32,
+                                    ),
+                                    const OnboardingLanguageButton(),
+                                  ],
+                                ),
+                                const SizedBox(height: 32),
 
-            // ── Logo ──────────────────────────────────────────
-            SvgPicture.asset(AppAssets.colorNameLogo, width: 130),
-            const SizedBox(height: 24),
+                                // ── Step Progress Indicator ───────────
+                                Obx(
+                                  () => OnboardingProgressBar(
+                                    currentStep: controller.currentStep.value,
+                                    totalSteps: controller.totalSteps,
+                                  ),
+                                ),
+                                const SizedBox(height: 28),
 
-            // ── Animated page text ────────────────────────────
-            Expanded(
-              flex: 3,
-              child: Obx(
-                () => AnimatedSwitcher(
-                  duration: const Duration(milliseconds: 400),
-                  child: _PageContent(
-                    key: ValueKey(controller.currentPage.value),
-                    titleKey:
-                        controller.pages[controller.currentPage.value].titleKey,
-                    bodyKey:
-                        controller.pages[controller.currentPage.value].bodyKey,
-                  ),
-                ),
-              ),
-            ),
+                                // ── Dynamic Step Content ──────────────
+                                Obx(() {
+                                  switch (controller.currentStep.value) {
+                                    case 0:
+                                      return Step1ActivityView(
+                                          controller: controller);
+                                    case 1:
+                                      return Step2CompanyView(
+                                          controller: controller);
+                                    case 2:
+                                      return Step3ModulesView(
+                                          controller: controller);
+                                    case 3:
+                                      return Step4ReadyView(
+                                          controller: controller);
+                                    default:
+                                      return Step1ActivityView(
+                                          controller: controller);
+                                  }
+                                }),
+                                const SizedBox(height: 36),
 
-            // ── Dot indicators ────────────────────────────────
-            Obx(
-              () => Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(
-                  controller.pages.length,
-                  (i) => _Dot(active: i == controller.currentPage.value),
-                ),
-              ),
-            ),
+                                // ── Bottom Navigation Controls ────────
+                                Obx(() {
+                                  final isLastStep =
+                                      controller.currentStep.value ==
+                                          controller.totalSteps - 1;
 
-            const SizedBox(height: 32),
+                                  return Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      // Back Button
+                                      TextButton.icon(
+                                        onPressed: controller.back,
+                                        style: TextButton.styleFrom(
+                                          foregroundColor:
+                                              const Color(0xFF64748B),
+                                          padding: const EdgeInsets.symmetric(
+                                            horizontal: 16,
+                                            vertical: 12,
+                                          ),
+                                        ),
+                                        icon: const Icon(
+                                          Icons.arrow_back,
+                                          size: 16,
+                                        ),
+                                        label: CustomText(
+                                          text: 'onboarding_back'.tr,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
+                                          color: const Color(0xFF64748B),
+                                        ),
+                                      ),
 
-            // ── CTA button ────────────────────────────────────
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 32),
-              child: Obx(
-                () => SizedBox(
-                  width: double.infinity,
-                  height: 54,
-                  child: ElevatedButton(
-                    onPressed: controller.next,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.accent,
-                      foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(14)),
+                                      // Continue / Launch Button
+                                      ElevatedButton(
+                                        onPressed: controller.next,
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor:
+                                              const Color(0xFF6366F1),
+                                          foregroundColor: Colors.white,
+                                          elevation: 2,
+                                          shadowColor: const Color(0xFF6366F1)
+                                              .withValues(alpha: 0.4),
+                                          padding: const EdgeInsets.symmetric(
+                                            horizontal: 32,
+                                            vertical: 16,
+                                          ),
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(12),
+                                          ),
+                                        ),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            CustomText(
+                                              text: isLastStep
+                                                  ? 'onboarding_launch_app'.tr
+                                                  : 'onboarding_continue'.tr,
+                                              fontSize: 14.5,
+                                              fontWeight: FontWeight.w700,
+                                              color: Colors.white,
+                                            ),
+                                            const SizedBox(width: 8),
+                                            const Icon(
+                                              Icons.arrow_forward,
+                                              size: 16,
+                                              color: Colors.white,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  );
+                                }),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
-                    child: Text(
-                      controller.isLastPage
-                          ? 'onboarding_get_started'.tr
-                          : 'onboarding_next'.tr,
-                      style: const TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.w600),
+                  ),
+
+                  // ── Right Column: 3D Connected Illustration (flex 38) ───
+                  Expanded(
+                    flex: 38,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 32,
+                        vertical: 48,
+                      ),
+                      child: Center(
+                        child: ConstrainedBox(
+                          constraints: const BoxConstraints(maxWidth: 500),
+                          child: Image.asset(
+                            AppAssets.onboardingHero,
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                ],
               ),
             ),
 
-            const SizedBox(height: 40),
+            // ── Floating / Pinned Title Bar ───────────────────────────
+            const Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              child: CustomTitleBar(),
+            ),
           ],
-                ),
-              ),
-            )),
-          ),
-        ),
-      ),
+        );
+      }),
     );
   }
 }
 
-// ── Private sub-widgets ───────────────────────────────────────────────────────
-
-class _PageContent extends StatelessWidget {
-  final String titleKey;
-  final String bodyKey;
-
-  const _PageContent({super.key, required this.titleKey, required this.bodyKey});
+/// Subtle soft lavender/blue radial gradients in the corners matching the screenshot.
+class _AmbientBackgroundDecoration extends StatelessWidget {
+  const _AmbientBackgroundDecoration();
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 32),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
+    return IgnorePointer(
+      child: Stack(
+        fit: StackFit.expand,
         children: [
-          Text(
-            titleKey.tr,
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              color: AppColors.textPrimary,
-              fontSize: 24,
-              fontWeight: FontWeight.w700,
+          // Top right ambient glow
+          Positioned(
+            top: -100,
+            right: -100,
+            child: Container(
+              width: 480,
+              height: 480,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: RadialGradient(
+                  colors: [
+                    const Color(0xFF818CF8).withValues(alpha: 0.09),
+                    const Color(0xFFC7D2FE).withValues(alpha: 0.04),
+                    Colors.transparent,
+                  ],
+                ),
+              ),
             ),
           ),
-          const SizedBox(height: 12),
-          Text(
-            bodyKey.tr,
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              color: AppColors.textSecondary,
-              fontSize: 15,
-              height: 1.6,
+
+          // Bottom right ambient glow
+          Positioned(
+            bottom: -120,
+            right: -80,
+            child: Container(
+              width: 520,
+              height: 520,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: RadialGradient(
+                  colors: [
+                    const Color(0xFFA5B4FC).withValues(alpha: 0.08),
+                    const Color(0xFFE0E7FF).withValues(alpha: 0.03),
+                    Colors.transparent,
+                  ],
+                ),
+              ),
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class _Dot extends StatelessWidget {
-  final bool active;
-  const _Dot({required this.active});
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 300),
-      margin: const EdgeInsets.symmetric(horizontal: 4),
-      width: active ? 24 : 8,
-      height: 8,
-      decoration: BoxDecoration(
-        color: active ? AppColors.accent : AppColors.dotInactive,
-        borderRadius: BorderRadius.circular(4),
       ),
     );
   }

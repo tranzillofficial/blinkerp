@@ -23,4 +23,104 @@ environment:
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
-# consider running `flutter pub upgrade --major-versions`. Alt¶»§q«^
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.8
+  get: ^4.7.3
+  get_storage: ^2.1.1
+  intl: ^0.20.2
+  window_manager: ^0.5.2
+  pretty_qr_code: ^3.6.0
+  syncfusion_flutter_barcodes: ^35.1.42
+  mobile_scanner: ^7.4.2
+  printing: ^5.15.1
+  connectivity_plus: ^7.3.2
+  skeletonizer: ^3.0.0
+  url_launcher: ^6.3.3
+  syncfusion_flutter_xlsio: ^35.1.41
+  uuid: ^4.6.0
+  flutter_udid: ^4.1.6
+  flutter_svg: ^2.3.0
+  video_player: ^2.14.1
+  video_player_win: ^3.3.1
+  
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^6.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/icons/activity/
+    - assets/icons/clinic/
+    - assets/icons/common/
+    - assets/icons/company/
+    - assets/icons/module/
+    - assets/icons/restaurant/
+    - assets/icons/retail/
+    - assets/icons/services/
+    - assets/icons/status/
+    - assets/icons/system/
+    - assets/fonts/
+    - assets/fonts/Manrope/
+    - assets/fonts/Manrope/static/
+    - assets/animations/
+
+  fonts:
+    - family: Manrope
+      fonts:
+        - asset: assets/fonts/Manrope/static/Manrope-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Manrope/static/Manrope-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Manrope/static/Manrope-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Manrope/static/Manrope-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Manrope/static/Manrope-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Manrope/static/Manrope-ExtraBold.ttf
+          weight: 800
+
+flutter_launcher_icons:
+  remove_alpha_ios: true
+  image_path: "assets/images/color_logo.png"
+  web:
+    generate: true
+    image_path: "assets/images/color_logo.png"
+    background_color: "#ffffff"
+    theme_color: "#006A53"
+  windows:
+    generate: true
+    image_path: "assets/images/color_logo.png"
+    icon_size: 48

@@ -1,5 +1,6 @@
 const Map<String, String> ar = {
-  'auth_preview_only': 'دي معاينة للواجهة. تسجيل الدخول هيكون متاح بعد ربط نظام المصادقة.',
+  'auth_preview_only':
+      'دي معاينة للواجهة. تسجيل الدخول هيكون متاح بعد ربط نظام المصادقة.',
   // ── App ──────────────────────────────────────────────────
   'app_name': 'بلينك ERP',
 
@@ -11,7 +12,7 @@ const Map<String, String> ar = {
   'auth_password': 'كلمة المرور',
   'auth_password_hint': '••••••••',
   'auth_remember_me': 'تذكّرني',
-  'auth_forgot_password': 'نسيت كلمة المرور؟',
+  'auth_forgot_password': 'نسيت كلمة المرور ؟',
   'auth_login': 'تسجيل الدخول',
   'auth_logout': 'تسجيل الخروج',
   'auth_no_account': 'ليس لديك حساب؟',
@@ -32,13 +33,73 @@ const Map<String, String> ar = {
   // ── Onboarding ───────────────────────────────────────────
   'onboarding_skip': 'تخطّي',
   'onboarding_next': 'التالي',
+  'onboarding_back': 'رجوع',
+  'onboarding_continue': 'متابعة',
+  'onboarding_step_format': 'الخطوة @current من @total',
   'onboarding_get_started': 'ابدأ الآن',
-  'onboarding_title_1': 'إدارة شاملة',
-  'onboarding_body_1': 'تحكّم كامل في عمليات شركتك من مكان واحد',
-  'onboarding_title_2': 'تقارير فورية',
-  'onboarding_body_2': 'احصل على تقارير وإحصائيات لحظية دقيقة',
-  'onboarding_title_3': 'متعدد الفروع',
-  'onboarding_body_3': 'أدر جميع فروعك بكل سهولة ويسر',
+  'onboarding_launch_app': 'بدء استخدام بلينك ERP',
+
+  // Step 1 - Business Activity
+  'onboarding_step1_title': 'ما نوع نشاطك التجاري؟',
+  'onboarding_step1_subtitle':
+      'اختر النشاط الذي يصف عملك بشكل أفضل.\nيساعدنا هذا في إعداد الأدوات المناسبة لك.',
+  'act_restaurant': 'مطعم ومقهى',
+  'act_restaurant_desc':
+      'قائمة الطعام، الطلبات، الطاولات، نقاط البيع والمخزون.',
+  'act_pharmacy': 'صيدلية وأدوية',
+  'act_pharmacy_desc': 'الباركود، التشغيلات، تواريخ الصلاحية والمخزون.',
+  'act_clinic': 'عيادة طبية',
+  'act_clinic_desc': 'المواعيد، ملفات المرضى، الخدمات والفواتير.',
+  'act_supermarket': 'سوبر ماركت',
+  'act_supermarket_desc': 'مبيعات سريعة، باركود، مخزون وكاشير.',
+  'act_wholesale': 'تجارة جملة',
+  'act_wholesale_desc': 'أسعار الجملة، شرائح الأسعار، العملاء والذمم.',
+  'act_retail': 'متجر تجزئة',
+  'act_retail_desc': 'مبيعات، منتجات، مرتجعات وفروع.',
+  'act_services': 'شركة خدمات',
+  'act_services_desc': 'عملاء، مشاريع، مهام وفواتير.',
+  'act_other': 'نشاط آخر',
+  'act_other_desc': 'سنطرح عليك بعض الأسئلة لفهم تفاصيل نشاطك.',
+
+  // Step 2 - Business Details
+  'onboarding_step2_title': 'معلومات المنشأة',
+  'onboarding_step2_subtitle':
+      'أدخل بعض التفاصيل لتخصيص فواتيرك وتقاريرك وإعدادات العمل.',
+  'onboarding_company_name': 'اسم المنشأة أو المتجر',
+  'onboarding_company_name_hint': 'مثال: شركة النور للتجارة',
+  'onboarding_country': 'الدولة',
+  'onboarding_currency': 'العملة الأساسية',
+  'onboarding_branches_count': 'عدد الفروع',
+
+  // Step 3 - Modules
+  'onboarding_step3_title': 'اختر الأنظمة والأدوات',
+  'onboarding_step3_subtitle':
+      'حددنا مسبقاً الأدوات المناسبة لنشاطك، ويمكنك تخصيصها في أي وقت.',
+  'mod_pos': 'نقطة البيع (POS)',
+  'mod_pos_desc': 'دفع سريع، طابعات، أدراج الكاش، وقارئ الباركود',
+  'mod_inventory': 'المخزون والمستودعات',
+  'mod_inventory_desc': 'تعدد المستودعات، الجرد الدوري، تنبيهات النواقص',
+  'mod_invoices': 'الفواتير والمبيعات',
+  'mod_invoices_desc': 'فواتير ضريبية، عروض أسعار، وإشعارات الدائن',
+  'mod_accounting': 'المحاسبة والمالية',
+  'mod_accounting_desc': 'شجرة الحسابات، قيود اليومية، ميزان المراجعة',
+  'mod_hr': 'الموارد البشرية والرواتب',
+  'mod_hr_desc': 'الحضور والانصراف، الورديات، مسير الرواتب والإجازات',
+  'mod_kitchen': 'شاشات المطبخ والطاولات',
+  'mod_kitchen_desc': 'مزامنة طلبات الطهاة، توزيع الصالات وحجز المقاعد',
+  'mod_customers': 'العملاء وبرامج الولاء',
+  'mod_customers_desc': 'حسابات العملاء، كشوفات الحساب، ونقاط المكافآت',
+  'mod_reports': 'التقارير والتحليلات',
+  'mod_reports_desc': 'مؤشرات الأرباح اللحظية، اتجاهات المبيعات والضرائب',
+
+  // Step 4 - Ready
+  'onboarding_step4_title': 'منظومتك جاهزة للانطلاق!',
+  'onboarding_step4_subtitle':
+      'تم إعداد وتخصيص بيئة عمل بلينك ERP بنجاح وفق متطلبات نشاطك.',
+  'onboarding_summary_activity': 'نوع النشاط',
+  'onboarding_summary_company': 'اسم المنشأة',
+  'onboarding_summary_currency': 'العملة',
+  'onboarding_summary_modules': 'الأنظمة المفعلة',
 
   // ── Common ───────────────────────────────────────────────
   'common_save': 'حفظ',
@@ -50,7 +111,7 @@ const Map<String, String> ar = {
   'common_search': 'بحث',
   'common_filter': 'فلترة',
   'common_refresh': 'تحديث',
-  'common_loading': 'جاري التحميل…',
+  'common_loading': 'جاري التحميل',
   'common_error': 'حدث خطأ',
   'common_retry': 'إعادة المحاولة',
   'common_no_data': 'لا توجد بيانات',
